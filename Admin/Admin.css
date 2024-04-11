@@ -195,7 +195,7 @@ a.sidebar-link:hover{
 }
 .content{
     flex: 1 1 auto;
-    text-align: center;
+    /* text-align: center; */
 }
 
 .footer{
@@ -237,5 +237,32 @@ a.sidebar-link:hover{
     .navbar-expand .navbar-nav .dropdown-menu{
         box-shadow: 0 .1rem .2rem rgba(0, 0, 0, .05);
     }
+}
+
+/* Add Student */
+.add-student {
+    max-width: 600px; 
+    margin: 0 auto; 
+    padding: 20px; 
+    background-color: #f9f9f9;
+    border-radius: 10px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+.add-student h3 {
+    margin-bottom: 20px; 
+}
+
+.add-student button[type="submit"] {
+    background-color: #293b5f; 
+    color: #fff; 
+    border: none; 
+    padding: 10px 20px; 
+    cursor: pointer; 
+    transition: 0.3s ease;
+}
+
+.add-student button[type="submit"]:hover {
+    background-color: #0e2238; 
 }
 

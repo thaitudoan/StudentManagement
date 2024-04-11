@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Users List</title>
     <link rel="stylesheet" href="Admin.css">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -12,79 +12,17 @@
 </head>
 <body>
     <div class="wrapper">
-        <aside id="sidebar">
-            <div class="d-flex">
-                <button id="toggle-btn" type="button">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
-                <div class="sidebar-logo">
-                    <a href="#">NVC</a>
-                </div>
-            </div>
-            <ul class="sidebar-nav">
-                <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
-                        <i class="fa-solid fa-chart-line"></i>
-                        <span>Dashboard</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
-                        <i class="fa-solid fa-chalkboard-user"></i>
-                        <span>Teacher</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
-                        <i class="fa-solid fa-user-graduate"></i>
-                        <span>Student</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
-                        <i class="fa-solid fa-user"></i>
-                        <span>Users</span>
-                    </a>
-                </li>
-            </ul>
-        </aside>
+        <?php
+            include 'Sidebar.php';
+        ?>
         <div class="main">
-            <nav class="navbar navbar-expand px-4 py-3">
-                <form action="#" class="d-none d-sm-inline-block">
-                    <div class="input-group input-group-navbar">
-                        <input type="text" class="form-control border-0 rounded-0" placeholder="Search...">
-                        <button class="btn border-0 rounded-0" type="button">Search</button>
-                    </div>
-                </form>
-                <div class="navbar-collapse collapse">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item dropdown">
-                            <a href="#" class="nav-icon pe-md-0" data-bs-toggle="dropdown">
-                                <img src="/images/account.png" class="avatar img-fluid" alt="">
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-end rounded">
-                                <a href="#" class="dropdown-item">
-                                    <i class="fa-solid fa-right-from-bracket"></i>
-                                    <span>Logout</span>
-                                </a>
-                                <a href="#" class="dropdown-item">
-                                    <i class="lni lni-cog"></i>
-                                    <span>Setting</span>
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a href="#" class="dropdown-item">
-                                    <i class="lni lni-question-circle"></i>
-                                    <span>Question</span>
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+            <?php
+                include 'Navbar.php';
+            ?>
             <main class="content px-3 py-4">
                 <div class="container-fluid">
                     <div class="mb-3">
-                        <h3 class="fw-bold fs-4 my-3">Student List</h3>
+                        <h3 class="fw-bold fs-4 my-3">Users List</h3>
                         <div class="row">
                             <div class="col-12">
                                 <table class="table table-striped">
@@ -94,6 +32,7 @@
                                         <th scope="col">First Name</th>
                                         <th scope="col">Last Name</th>
                                         <th scope="col">Email</th>
+                                        <th scope="col">Role</th>
                                         <th scope="col">Status</th>
                                       </tr>
                                     </thead>
@@ -103,6 +42,7 @@
                                         <td>Mark</td>
                                         <td>Otto</td>
                                         <td>mark@gmail.com</td>
+                                        <td>Admin</td>
                                         <td>
                                             <button type="button" class="btn border-0 rounded-0" onclick="editStudent(1)">Edit</button>
                                             <button type="button" class="btn border-0 rounded-0" onclick="deleteStudent(1)">Delete</button>
@@ -113,6 +53,7 @@
                                         <td>Jacob</td>
                                         <td>Thornton</td>
                                         <td>jacob@gmail.com</td>
+                                        <td>Student</td>
                                         <td>
                                             <button type="button" class="btn border-0 rounded-0" onclick="editStudent(1)">Edit</button>
                                             <button type="button" class="btn border-0 rounded-0" onclick="deleteStudent(1)">Delete</button>
@@ -123,6 +64,7 @@
                                         <td>Lionel</td>
                                         <td>Messi</td>
                                         <td>lionelmessi@gmail.com</td>
+                                        <td>Admin</td>
                                         <td>
                                             <button type="button" class="btn border-0 rounded-0" onclick="editStudent(1)">Edit</button>
                                             <button type="button" class="btn border-0 rounded-0" onclick="deleteStudent(1)">Delete</button>
@@ -135,27 +77,9 @@
                     </div>
                 </div>
             </main>
-            <footer class="footer">
-                <div class="container-fluid">
-                    <div class="row text-body-secondary">
-                        <div class="col-6 text-start">
-                            <a href="#" class="text-body-secondary">
-                                <strong>NVC</strong>
-                            </a>
-                        </div>
-                        <div class="col-6 text-end text-body-secondary d-none d-md-block">
-                            <ul class="list-inline mb-0">
-                                <li class="list-inline-item">
-                                    <a href="#" class="text-body-secondary">Contact</a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="#" class="text-body-secondary">About us</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+            <?php
+                include 'Footer.php';
+            ?>
         </div>
     </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
